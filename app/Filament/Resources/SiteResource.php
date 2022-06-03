@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Resources\PostResource\RelationManagers\ChecksRelationManager;
 use App\Filament\Resources\SiteResource\Pages;
 use App\Filament\Resources\SiteResource\RelationManagers;
 use App\Models\Site;
@@ -15,7 +16,7 @@ class SiteResource extends Resource
 {
     protected static ?string $model = Site::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-globe';
 
     public static function form(Form $form): Form
     {
@@ -59,7 +60,7 @@ class SiteResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            ChecksRelationManager::class,
         ];
     }
 
